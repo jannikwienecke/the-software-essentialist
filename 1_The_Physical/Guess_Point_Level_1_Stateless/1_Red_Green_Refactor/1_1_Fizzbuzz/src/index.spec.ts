@@ -10,27 +10,22 @@ import { fizzbuzz } from "./fizzbuzz";
 // it('takes numbers from 1 to 100')
 describe("fizzbuzz", () => {
   it("outputs the number as a string", () => {
-    expect(fizzbuzz(2)).toEqual("2");
-    expect(fizzbuzz(11)).toEqual("11");
+    [1, 2, 4, 11, 13, 17].map((val) => expect(fizzbuzz(val)).toEqual(`${val}`));
   });
 
   it('returns "Fizz" for a multipple of three', () => {
-    expect(fizzbuzz(3)).toEqual("Fizz");
-    expect(fizzbuzz(6)).toEqual("Fizz");
+    [3, 6, 9, 12, 18].map((val) => expect(fizzbuzz(val)).toEqual("Fizz"));
   });
 
   it('returns "Buzz" for a multiple of five', () => {
-    expect(fizzbuzz(5)).toEqual("Buzz");
-    expect(fizzbuzz(10)).toEqual("Buzz");
+    [5, 10, 20, 35].map((val) => expect(fizzbuzz(val)).toEqual("Buzz"));
   });
 
   it("should return Fizzbuzz for a multiple of three AND five", () => {
-    expect(fizzbuzz(15)).toEqual("FizzBuzz");
-    expect(fizzbuzz(30)).toEqual("FizzBuzz");
+    [15, 30, 45].map((val) => expect(fizzbuzz(val)).toEqual("FizzBuzz"));
   });
 
   it("knows that 1 is valid because it is in between 1 and 100", () => {
-    expect(fizzbuzz(110)).toEqual("");
-    expect(fizzbuzz(-10)).toEqual("");
+    [-10, -1, 101, 2000].map((val) => expect(fizzbuzz(val)).toEqual(""));
   });
 });
