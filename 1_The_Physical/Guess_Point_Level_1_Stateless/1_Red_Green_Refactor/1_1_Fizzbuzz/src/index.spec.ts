@@ -25,7 +25,16 @@ describe("fizzbuzz", () => {
     [15, 30, 45].map((val) => expect(fizzbuzz(val)).toEqual("FizzBuzz"));
   });
 
-  it("knows that 1 is valid because it is in between 1 and 100", () => {
-    [-10, -1, 101, 2000].map((val) => expect(fizzbuzz(val)).toEqual(""));
-  });
+  //     [-10, -1, 101, 2000].map((val) => expect(fizzbuzz(val)).toEqual(""));
+  it.each([
+    [-10, ""],
+    [-1, ""],
+    [101, ""],
+    [2000, ""],
+  ])(
+    "%p is out off bounds and therefore returns %p",
+    (number: number, result: string) => {
+      expect(fizzbuzz(number)).toEqual(result);
+    }
+  );
 });
