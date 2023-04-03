@@ -8,6 +8,7 @@ import { fizzbuzz } from "./fizzbuzz";
 // OR it(”knows that 1 is a valid input because it’s in between 1 and 100”)
 // IS BETTER THAN
 // it('takes numbers from 1 to 100')
+
 describe("fizzbuzz", () => {
   it("outputs the number as a string", () => {
     [1, 2, 4, 11, 13, 17].map((val) => expect(fizzbuzz(val)).toEqual(`${val}`));
@@ -25,7 +26,8 @@ describe("fizzbuzz", () => {
     [15, 30, 45].map((val) => expect(fizzbuzz(val)).toEqual("FizzBuzz"));
   });
 
-  //     [-10, -1, 101, 2000].map((val) => expect(fizzbuzz(val)).toEqual(""));
+  // REFERENCE FOR PARAMERIZED TESTS
+  // https://blog.codeleak.pl/2021/12/parameterized-tests-with-jest.html
   it.each([
     [-10, ""],
     [-1, ""],
