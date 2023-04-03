@@ -4,6 +4,8 @@
 // ✅ For numbers that are multiples of both three and five, it returns “FizzBuzz.”
 import { fizzbuzz } from "./fizzbuzz";
 
+// 🚨 NOTE USE CONCRETE EXAMPLES => Returns "Buzz" for a multiple of five such as 5, 10, 20
+
 describe("fizzbuzz", () => {
   it("outputs the number as a string", () => {
     expect(fizzbuzz(2)).toEqual("2");
@@ -30,5 +32,3 @@ describe("fizzbuzz", () => {
     expect(fizzbuzz(-10)).toEqual("");
   });
 });
-
-// NOTE USE CONCRETE EXAMPLES => Returns "Buzz" for a multiple of five such as 5, 10, 20
