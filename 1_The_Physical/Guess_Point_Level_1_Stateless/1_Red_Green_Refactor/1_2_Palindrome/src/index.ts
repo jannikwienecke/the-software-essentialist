@@ -2,12 +2,15 @@ function reverseString(text: string) {
   return text.split("").reverse().join("");
 }
 
-export const isPalindrome = (text: string) => {
-  const removedWhiteSpacesText = text.split(" ").join("");
-  const lowerCaseText = removedWhiteSpacesText.toLocaleLowerCase();
-  const reversedText = reverseString(lowerCaseText);
+function transformTextIntoLowercaseWord(text: string) {
+  return text.split(" ").join("").toLocaleLowerCase();
+}
 
-  if (lowerCaseText === reversedText) return true;
+export const isPalindrome = (text: string) => {
+  const singleWordLowerCase = transformTextIntoLowercaseWord(text);
+  const reversedVersion = reverseString(singleWordLowerCase);
+
+  if (singleWordLowerCase === reversedVersion) return true;
 
   return false;
 };
